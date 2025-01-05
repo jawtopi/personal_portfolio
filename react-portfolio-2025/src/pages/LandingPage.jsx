@@ -152,7 +152,7 @@ const LandingPage = () => {
       {/* canvas for drawing */}
       <canvas
         ref={canvasRef}
-        className="absolute top-0 left-0 z-10"
+        className="absolute top-0 left-0 z-10 pointer-events-auto"
         width={window.innerWidth}
         height={window.innerHeight}
         onMouseDown={handleMouseDown}
@@ -174,16 +174,16 @@ const LandingPage = () => {
       </div>
 
       {/* text */}
-      <div className="flex flex-col items-center z-30 pointer-events-auto">
+      <div className="flex flex-col items-center z-20 pointer-events-none">
         <p className="font-semibold text-black animate-fade-in mb-8 text-4xl sm:text-6xl lg:text-7xl">
-          Hello. I'm Jason
+          hello. i'm jason
         </p>
         <button
           id="continue-button"
-          className="px-6 py-3 mt-4 text-white rounded-lg shadow-lg transition-all duration-2000 text-base sm:text-lg lg:text-xl"
+          className="px-6 py-3 mt-4 text-white rounded-lg shadow-lg transition-all duration-2000 text-base sm:text-lg lg:text-xl pointer-events-auto"
           style={{ backgroundColor: buttonColor }}
         >
-          Continue
+          continue
         </button>
       </div>
     </div>
