@@ -173,7 +173,7 @@ const Sidebar = ({ isDarkMode, refs }) => {
             <li>
               <button
                 onClick={() => handleScrollToSection(refs.aboutMeRef)}
-                className={`block px-4 pr-[10.2rem] py-2 text-sm ${
+                className={`block px-4 pr-[10.4rem] py-2 text-sm ${
                   isDarkMode ? 'hover:bg-gray-700 text-blue-300' : 'hover:bg-gray-200 text-blue-600'
                 } transition`}
               >
@@ -183,7 +183,7 @@ const Sidebar = ({ isDarkMode, refs }) => {
             <li>
               <button
                 onClick={() => handleScrollToSection(refs.educationRef)}
-                className={`block px-4 pr-[10.2rem] py-2 text-sm ${
+                className={`block px-4 pr-[10.4rem] py-2 text-sm ${
                   isDarkMode ? 'hover:bg-gray-700 text-blue-300' : 'hover:bg-gray-200 text-blue-600'
                 } transition`}
               >
@@ -275,7 +275,7 @@ const Sidebar = ({ isDarkMode, refs }) => {
             <li>
               <button
                 onClick={() => handleScrollToSection(refs.teachingRef)}
-                className={`block px-4 pr-[10.2rem] py-2 text-sm ${
+                className={`block px-4 pr-[10.4rem] py-2 text-sm ${
                   isDarkMode ? 'hover:bg-gray-700 text-blue-300' : 'hover:bg-gray-200 text-blue-600'
                 } transition`}
               >
