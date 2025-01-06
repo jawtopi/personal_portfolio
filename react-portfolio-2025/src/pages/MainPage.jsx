@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import SideBar from './components/SideBar';
 import Header from './components/Header';
 import AboutMe from './components/AboutMe';
@@ -7,21 +7,63 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Teaching from './components/Teaching';
 
-
 const MainPage = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isFadingIn, setIsFadingIn] = useState(true);
+
+  const aboutMeRef = useRef(null);
+  const educationRef = useRef(null);
+  const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
+  const teachingRef = useRef(null);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsFadingIn(false); // Stop fading animation after it completes
+    }, 1000); // Duration of the fade-in animation in milliseconds
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="flex h-screen">
-      <SideBar />
+    <div
+      className={`flex flex-col ${
+        isDarkMode ? 'bg-[#27262b] text-white' : 'bg-white text-black'
+      } ${isFadingIn ? 'animate-fade-in' : ''}`}
+    >
+      <SideBar
+        isDarkMode={isDarkMode}
+        refs={{
+          aboutMeRef,
+          educationRef,
+          experienceRef,
+          projectsRef,
+          teachingRef,
+        }}
+      />
       <div className="flex-1 flex flex-col lg:pl-80">
-        <Header />
-        <AboutMe />
-        <Education />
-        <Experience />
-        <Projects />
-        <Teaching />
+        <Header onToggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+        <div ref={aboutMeRef}>
+          <AboutMe isDarkMode={isDarkMode} />
+        </div>
+        <div ref={educationRef}>
+          <Education isDarkMode={isDarkMode} />
+        </div>
+        <div ref={experienceRef}>
+          <Experience isDarkMode={isDarkMode} />
+        </div>
+        <div ref={projectsRef}>
+          <Projects isDarkMode={isDarkMode} />
+        </div>
+        <div ref={teachingRef}>
+          <Teaching isDarkMode={isDarkMode} />
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default MainPage
+export default MainPage;

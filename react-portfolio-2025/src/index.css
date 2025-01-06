@@ -27,6 +27,21 @@
   animation: fadeIn 2s ease-in-out;
 }
 
-.animate-fade-in-long {
-  animation: fadeIn 4s ease-in-out;
+
+
+@keyframes zoomFadeOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
+
+.animate-zoom-fade-out {
+  animation: zoomFadeOut 1s ease-in-out forwards;
+}
+
+

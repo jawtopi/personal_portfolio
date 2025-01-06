@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Education = () => {
+const Education = ({ isDarkMode }) => {
   const courses = [
     { id: 'CS 162', semester: 'Spring 2025', name: 'Operating Systems and System Programming', notes: 'OS concepts, concurrency, threads, system calls.' },
     { id: 'CS 188', semester: 'Spring 2025', name: 'Introduction to Artificial Intelligence', notes: 'AI techniques, search algorithms, machine learning.' },
@@ -22,42 +22,43 @@ const Education = () => {
 
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // toggle function to expand or collapse the table
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
 
   return (
-    <div className="p-8 pr-16">
+    <div className={`p-8 pr-16 ${isDarkMode ? 'bg-[#27262b]' : 'bg-white'}`}>
       <h1 className="text-4xl pb-4">Education</h1>
-      <p className="font-normal text-xl text-blue-700">University of California, Berkeley</p>
-      <p className="font-light text-lg pb-4 text-blue-700">
+      <p className={`font-normal text-xl ${isDarkMode ? 'text-blue-300' : 'text-blue-700'}`}>
+        University of California, Berkeley
+      </p>
+      <p className={`font-light text-lg pb-4 ${isDarkMode ? 'text-blue-300' : 'text-blue-700'}`}>
         B.A. Computer Science || B.A. Applied Mathematics
       </p>
-      <table className="table-auto border-collapse border border-gray-300 w-full text-left">
+      <table className={`table-auto border-collapse w-full text-left ${isDarkMode ? 'border-gray-600 bg-[#27262b]' : 'border-gray-300 bg-white'}`}>
         <thead>
-          <tr className="bg-gray-100">
-            <th className="border border-gray-300 px-4 py-2 w-32">Course ID</th>
-            <th className="border border-gray-300 px-4 py-2">Semester Taken</th>
-            <th className="border border-gray-300 px-4 py-2">Course Name</th>
-            <th className="border border-gray-300 px-4 py-2">Notes</th>
+          <tr className={isDarkMode ? 'bg-gray-700' : 'bg-gray-100'}>
+            <th className={`border px-4 py-2 w-32 ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>Course ID</th>
+            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>Semester Taken</th>
+            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>Course Name</th>
+            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>Notes</th>
           </tr>
         </thead>
         <tbody>
           {(isExpanded ? courses : courses.slice(0, 6)).map((course, index) => (
             <tr key={index}>
-              <td className="border border-gray-300 px-4 py-2 w-32">{course.id}</td>
-              <td className="border border-gray-300 px-4 py-2">{course.semester}</td>
-              <td className="border border-gray-300 px-4 py-2">{course.name}</td>
-              <td className="border border-gray-300 px-4 py-2">{course.notes}</td>
+              <td className={`border px-4 py-2 w-32 ${isDarkMode ? 'border-gray-600 text-gray-300' : 'border-gray-300 text-gray-800'}`}>{course.id}</td>
+              <td className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600 text-gray-300' : 'border-gray-300 text-gray-800'}`}>{course.semester}</td>
+              <td className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600 text-gray-300' : 'border-gray-300 text-gray-800'}`}>{course.name}</td>
+              <td className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600 text-gray-300' : 'border-gray-300 text-gray-800'}`}>{course.notes}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <div className="mt-4">
+      <div className={`mt-4 ${isDarkMode ? 'bg-[#27262b]' : 'bg-white'}`}>
         <button
           onClick={toggleExpand}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+          className={`px-4 py-2 rounded transition ${isDarkMode ? 'bg-blue-700 hover:bg-blue-800 text-white' : 'bg-blue-500 hover:bg-blue-600 text-white'}`}
         >
           {isExpanded ? 'Show Less' : 'Show More'}
         </button>

@@ -7,7 +7,7 @@ import nike from '../images/nike.png';
 import berk from '../images/berk.png';
 import kumon from '../images/kumon.jpeg';
 
-const Experience = () => {
+const Experience = ({ isDarkMode }) => {
   const workExperiences = [
     {
       title: 'Co-Founder / Teacher',
@@ -41,7 +41,7 @@ const Experience = () => {
         'Extrapolated longitude, latitude, and height data using ArcGIS to display 3D flight path on Google Earth.',
         'Packaged code into full-stack application using Electron and built basic front-end using React.js for pre-deployment.',
       ],
-      logo: kidrone
+      logo: kidrone,
     },
     {
       title: 'Software Engineer Intern - Game Development',
@@ -53,7 +53,7 @@ const Experience = () => {
         'Ensured correct text display by writing scripts to fetch, post, and concatenate string data to/from JSON and XML files.',
         'Wrote unit tests and performed regression testing, resulting in a robust mobile application ready for release.',
       ],
-      logo: ss
+      logo: ss,
     },
     {
       title: 'CS61a Academic Intern',
@@ -65,18 +65,18 @@ const Experience = () => {
         'Worked to support classes of 40+ through active feedback and code review in lab sections and office hours.',
         'Covered topics from Higher-Order Functions to Recursion, Mutability, SQL and Object-Oriented Programming.',
       ],
-      logo: berk
+      logo: berk,
     },
     {
-        title: 'Head Teaching Assistant',
-        company: 'KUMON Mt Albert.',
-        location: 'Mt Albert, Auckland, New Zealand',
-        date: 'Feb 2016 - Aug 2022',
-        responsibilities: [
-          'Managed day-to-day activities at tutoring center, trained new staff, taught primary to high school Math and English',
-          'Hosted fun flashcard and reading sessions for younger students (ages < 5)',
-        ],
-        logo: kumon
+      title: 'Head Teaching Assistant',
+      company: 'KUMON Mt Albert.',
+      location: 'Mt Albert, Auckland, New Zealand',
+      date: 'Feb 2016 - Aug 2022',
+      responsibilities: [
+        'Managed day-to-day activities at tutoring center, trained new staff, taught primary to high school Math and English',
+        'Hosted fun flashcard and reading sessions for younger students (ages < 5)',
+      ],
+      logo: kumon,
     },
   ];
 
@@ -87,7 +87,11 @@ const Experience = () => {
   };
 
   return (
-    <div className="p-8 pr-16">
+    <div
+      className={`p-8 pr-16 transition-colors duration-300 ${
+        isDarkMode ? 'bg-[#27262b] text-white' : 'bg-white text-black'
+      }`}
+    >
       <h1 className="text-4xl pb-8">Experience</h1>
       <p className="pb-8">
         Find my most current resume{' '}
@@ -95,26 +99,33 @@ const Experience = () => {
           href="https://drive.google.com/file/d/1zWg4s2eRfQiYx90x2QoHOc9W75Ekj5R4/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-700 underline"
+          className={`${isDarkMode ? 'text-blue-300' : 'text-blue-700'} underline`}
         >
           here
         </a>
         !
       </p>
-      <h2 className="text-2xl font-thin pb-4">Work Experience (Might not be up to date)</h2>
+      <h2 className={`text-2xl font-thin pb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+        Work Experience (Might not be up to date)
+      </h2>
       {(isExpanded ? workExperiences : workExperiences.slice(0, 2)).map((job, index) => (
-        <WorkExpCard key={index} {...job} />
+        <WorkExpCard key={index} {...job} isDarkMode={isDarkMode} />
       ))}
       <div className="mt-4">
         <button
           onClick={toggleExpand}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+          className={`px-4 py-2 rounded transition ${
+            isDarkMode ? 'bg-blue-700 hover:bg-blue-800 text-white' : 'bg-blue-500 hover:bg-blue-600 text-white'
+          }`}
         >
           {isExpanded ? 'Show Less' : 'Show More'}
         </button>
       </div>
-      <h2 className="text-2xl font-thin pt-8 pb-4">Research</h2>
-      <p>I am currently searching for research opportunities! Interested in Security, Systems, Education, and Machine Learning research.</p>
+      <h2 className={`text-2xl font-thin pt-8 pb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>Research</h2>
+      <p className={`${isDarkMode ? 'text-white' : 'text-black'}`}>
+        I am currently searching for research opportunities! Interested in Security, Systems, Education, and Machine
+        Learning research.
+      </p>
     </div>
   );
 };
