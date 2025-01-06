@@ -1,0 +1,7 @@
+<script>
+    // Redirect all 404s to the index.html for React Router to handle
+    if (location.pathname !== "/personal_portfolio/") {
+      location.replace("/personal_portfolio" + location.pathname + location.search);
+    }
+  </script>
+  
