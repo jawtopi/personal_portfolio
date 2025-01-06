@@ -1,22 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import darkModeIcon from "./icons/dark-mode.svg"; // import the svg icon
+import darkModeIcon from "./icons/dark-mode.svg";
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   const [cursor, setCursor] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
   const [triangles, setTriangles] = useState([]);
-  const [showTapToContinue, setShowTapToContinue] = useState(false);
   const [isDrawing, setIsDrawing] = useState(false);
   const [buttonColor, setButtonColor] = useState("hsl(0, 70%, 60%)"); // initial button color
+  const [isDarkMode, setIsDarkMode] = useState(false); // dark mode state
   const canvasRef = useRef(null);
 
-  useEffect(() => {
-    // show "tap to continue" after 3 seconds
-    const timeout = setTimeout(() => {
-      setShowTapToContinue(true);
-    }, 3000);
-
-    return () => clearTimeout(timeout);
-  }, []);
 
   useEffect(() => {
     // update cursor position on mousemove
@@ -110,7 +103,7 @@ const LandingPage = () => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
     context.lineTo(event.clientX, event.clientY);
-    context.strokeStyle = "black";
+    context.strokeStyle = isDarkMode ? "white" : "black"; // adapt pen color based on dark mode
     context.lineWidth = 2;
     context.stroke();
   };
@@ -123,9 +116,17 @@ const LandingPage = () => {
     setIsDrawing(false);
   };
 
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
+
   return (
     <div
-      className="relative h-screen w-screen bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] overflow-hidden flex flex-col items-center justify-center"
+      className={`relative h-screen w-screen overflow-hidden flex flex-col items-center justify-center ${
+        isDarkMode
+          ? "bg-black text-white" // dark mode styles
+          : "absolute inset-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px]" // light mode styles
+      }`}
     >
       {/* background triangles */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
@@ -164,7 +165,8 @@ const LandingPage = () => {
       {/* dark mode icon */}
       <div
         id="dark-mode-icon"
-        className="absolute top-4 right-4 p-2 rounded-full hover:bg-black transition-colors duration-300 z-30 pointer-events-auto"
+        className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-700 transition-colors duration-300 z-30 pointer-events-auto cursor-pointer"
+        onClick={toggleDarkMode}
       >
         <img
           src={darkModeIcon}
@@ -175,16 +177,20 @@ const LandingPage = () => {
 
       {/* text */}
       <div className="flex flex-col items-center z-20 pointer-events-none">
-        <p className="font-semibold text-black animate-fade-in mb-8 text-4xl sm:text-6xl lg:text-7xl">
+        <p className="font-semibold animate-fade-in mb-8 text-5xl sm:text-6xl lg:text-7xl">
           hello. i'm jason
         </p>
-        <button
-          id="continue-button"
-          className="px-6 py-3 mt-4 text-white rounded-lg shadow-lg transition-all duration-2000 text-base sm:text-lg lg:text-xl pointer-events-auto"
-          style={{ backgroundColor: buttonColor }}
+        <Link
+            to="/mainpage"
+            id="continue-button"
+            className="px-6 py-3 mt-4 rounded-lg shadow-lg transition-all animate-fade-in duration-2000 text-base sm:text-lg lg:text-xl pointer-events-auto"
+            style={{
+                backgroundColor: buttonColor,
+                color: isDarkMode ? "black" : "white",
+            }}
         >
           continue
-        </button>
+        </Link>
       </div>
     </div>
   );
