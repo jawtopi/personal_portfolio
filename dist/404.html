@@ -1,7 +1,11 @@
 <script>
-    // Redirect all 404s to the index.html for React Router to handle
-    if (location.pathname !== "/personal_portfolio/") {
-      location.replace("/personal_portfolio" + location.pathname + location.search);
+    // Ensure redirection to index.html without endlessly appending paths
+    if (!location.pathname.startsWith('/personal_portfolio') || location.pathname === '/personal_portfolio/') {
+      // Redirect only if not already at the correct base path
+      location.replace('/personal_portfolio');
+    } else if (location.pathname.startsWith('/personal_portfolio') && location.pathname !== '/personal_portfolio/index.html') {
+      // Redirect all valid paths to index.html for React Router to handle
+      location.replace('/personal_portfolio/index.html');
     }
   </script>
   
