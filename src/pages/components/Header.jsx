@@ -66,7 +66,7 @@ const Header = ({ onToggleDarkMode, isDarkMode }) => {
     <header
       className={`relative ${
         isDarkMode ? "bg-[#27262B]" : "bg-white"
-      } border-b border-gray-200 p-5 mr-16 flex items-center justify-end transition-colors duration-300`}
+      } border-b border-gray-200 p-5 flex items-center justify-end transition-colors duration-300 lg:mr-16`}
     >
       {/* triangle animation */}
       <div className="absolute inset-0 pointer-events-none">
