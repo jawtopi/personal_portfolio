@@ -1,14 +1,11 @@
 <script>
-    const BASE_PATH = '/personal_portfolio'; // Set your base path
-  
-    // Check if the URL doesn't match the base path or ends in an invalid path
-    if (!location.pathname.startsWith(BASE_PATH) || location.pathname === `${BASE_PATH}/`) {
-      // Redirect to the base path for invalid or root paths
-      location.replace(`${BASE_PATH}/`);
-    } else {
-      // Rewrite the URL for valid paths
-      const newUrl = `${BASE_PATH}/index.html`;
-      history.replaceState(null, null, newUrl);
+    // Ensure redirection to index.html without endlessly appending paths
+    if (!location.pathname.startsWith('/personal_portfolio') || location.pathname === '/personal_portfolio/') {
+      // Redirect only if not already at the correct base path
+      location.replace('/personal_portfolio');
+    } else if (location.pathname.startsWith('/personal_portfolio') && location.pathname !== '/personal_portfolio/mainpage') {
+      // Redirect all valid paths to index.html for React Router to handle
+      location.replace('/personal_portfolio');
     }
   </script>
   
