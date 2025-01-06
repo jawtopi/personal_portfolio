@@ -49,7 +49,7 @@ const LandingPage = () => {
       setTimeout(() => {
         setTriangles((prev) => prev.slice(1));
       }, 300);
-    }, 10);
+    }, 7.5);
 
     return () => clearInterval(interval);
   }, [cursor]);
