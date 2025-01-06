@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import darkModeIcon from "./icons/dark-mode.svg";
 
 const LandingPage = () => {
@@ -9,6 +10,8 @@ const LandingPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [animationTriggered, setAnimationTriggered] = useState(false);
   const canvasRef = useRef(null);
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const updateCursor = (event) => {
@@ -100,7 +103,7 @@ const LandingPage = () => {
   const handleContinueClick = () => {
     setAnimationTriggered(true);
     setTimeout(() => {
-      window.location.href = "/mainpage";
+      navigate("/mainpage"); // Navigate to /mainpage
     }, 1000);
   };
 
