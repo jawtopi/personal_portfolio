@@ -3,9 +3,9 @@
     if (!location.pathname.startsWith('/personal_portfolio') || location.pathname === '/personal_portfolio/') {
       // Redirect only if not already at the correct base path
       location.replace('/personal_portfolio');
-    } else if (location.pathname.startsWith('/personal_portfolio') && location.pathname !== '/personal_portfolio/index.html') {
+    } else if (location.pathname.startsWith('/personal_portfolio') && location.pathname !== '/personal_portfolio/mainpage') {
       // Redirect all valid paths to index.html for React Router to handle
-      location.replace('/personal_portfolio/index.html');
+      location.replace('/personal_portfolio/mainpage');
     }
   </script>
   
