@@ -165,7 +165,9 @@ const LandingPage = () => {
       {/* dark mode icon */}
       <div
         id="dark-mode-icon"
-        className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-700 transition-colors duration-300 z-30 pointer-events-auto cursor-pointer"
+        className={`absolute top-4 right-4 p-2 rounded-full transition-colors duration-300 z-30 pointer-events-auto cursor-pointer ${
+          isDarkMode ? "bg-gray-700" : ""
+        }`} 
         onClick={toggleDarkMode}
       >
         <img
@@ -174,6 +176,7 @@ const LandingPage = () => {
           className="w-8 h-8"
         />
       </div>
+
 
       {/* text */}
       <div className="flex flex-col items-center z-20 pointer-events-none">

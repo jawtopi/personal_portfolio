@@ -1,14 +1,19 @@
 import React from 'react';
 import SideBar from './components/SideBar';
 import Header from './components/Header';
+import AboutMe from './components/AboutMe';
+import Education from './components/Education';
 
 
 const MainPage = () => {
   return (
     <div className="flex h-screen">
       <SideBar />
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col lg:pl-80">
         <Header />
+        <AboutMe />
+        <Education />
+        
       </div>
     </div>
   );
