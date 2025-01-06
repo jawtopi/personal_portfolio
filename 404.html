@@ -1,11 +1,10 @@
 <script>
-    // Ensure redirection to index.html without endlessly appending paths
-    if (!location.pathname.startsWith('/personal_portfolio') || location.pathname === '/personal_portfolio/') {
-      // Redirect only if not already at the correct base path
-      location.replace('/personal_portfolio');
-    } else if (location.pathname.startsWith('/personal_portfolio') && location.pathname !== '/personal_portfolio/mainpage') {
-      // Redirect all valid paths to index.html for React Router to handle
-      location.replace('/personal_portfolio');
+    const BASE_PATH = '/personal_portfolio'; // Define the base path for the application
+    const BASE_URL = `${BASE_PATH}/`; // Define the base URL for redirection
+  
+    // Redirect to the base URL if not already on the base URL
+    if (location.pathname !== BASE_URL) {
+      location.replace(BASE_URL); // Redirect to the base URL
     }
   </script>
   
