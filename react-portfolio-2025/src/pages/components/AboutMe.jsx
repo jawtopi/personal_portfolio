@@ -11,7 +11,7 @@ const AboutMe = () => {
           <h1 className='text-2xl font-semibold text-blue-700'>Jason Lee</h1>
           <p className='text-blue-700'> jawtopi@berkeley.edu </p>
           <p className='pt-4 text-gray-800'>
-            Hi! I’m Jason. I'm an international student from New Zealand studying CS and Math student @ UC Berkeley.
+            Hi! I’m Jason. I'm an international student from New Zealand studying CS & Math student @ UC Berkeley.
           </p>
           <p className='pt-6 text-gray-800'>
             I’m passionate about creating impactful software solutions, with experience ranging from building optimized algorithms

@@ -3,6 +3,7 @@ import SideBar from './components/SideBar';
 import Header from './components/Header';
 import AboutMe from './components/AboutMe';
 import Education from './components/Education';
+import Experience from './components/Experience';
 
 
 const MainPage = () => {
@@ -13,6 +14,7 @@ const MainPage = () => {
         <Header />
         <AboutMe />
         <Education />
+        <Experience />
         
       </div>
     </div>
