@@ -27,8 +27,8 @@ const Education = ({ isDarkMode }) => {
   };
 
   return (
-    <div className={`p-8 pr-16 ${isDarkMode ? 'bg-[#27262b]' : 'bg-white'}`}>
-      <h1 className="text-4xl pb-4">Education</h1>
+    <div className={`p-8 pr-16 transition-colors duration-300 ${isDarkMode ? 'bg-[#27262b]' : 'bg-white'}`}>
+      <h1 className={`text-4xl pb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>Education</h1>
       <p className={`font-normal text-xl ${isDarkMode ? 'text-blue-300' : 'text-blue-700'}`}>
         University of California, Berkeley
       </p>
@@ -38,10 +38,10 @@ const Education = ({ isDarkMode }) => {
       <table className={`table-auto border-collapse w-full text-left ${isDarkMode ? 'border-gray-600 bg-[#27262b]' : 'border-gray-300 bg-white'}`}>
         <thead>
           <tr className={isDarkMode ? 'bg-gray-700' : 'bg-gray-100'}>
-            <th className={`border px-4 py-2 w-32 ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>Course ID</th>
-            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>Semester Taken</th>
-            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>Course Name</th>
-            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600' : 'border-gray-300'}`}>Notes</th>
+            <th className={`border px-4 py-2 w-32 ${isDarkMode ? 'border-gray-600 text-white' : 'border-gray-300 text-black'}`}>Course ID</th>
+            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600 text-white' : 'border-gray-300 text-black'}`}>Semester Taken</th>
+            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600 text-white' : 'border-gray-300 text-black'}`}>Course Name</th>
+            <th className={`border px-4 py-2 ${isDarkMode ? 'border-gray-600 text-white' : 'border-gray-300 text-black'}`}>Notes</th>
           </tr>
         </thead>
         <tbody>

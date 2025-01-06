@@ -68,7 +68,7 @@ const Header = ({ onToggleDarkMode, isDarkMode }) => {
         isDarkMode ? "bg-[#27262B]" : "bg-white"
       } border-b border-gray-200 p-5 mr-16 flex items-center justify-end transition-colors duration-300`}
     >
-      {/* Triangle animation */}
+      {/* triangle animation */}
       <div className="absolute inset-0 pointer-events-none">
         {triangles.map((triangle) => (
           <div

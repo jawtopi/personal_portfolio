@@ -23,15 +23,15 @@ const MainPage = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsFadingIn(false); // Stop fading animation after it completes
-    }, 1000); // Duration of the fade-in animation in milliseconds
+      setIsFadingIn(false); // stop fading animation after it completes
+    }, 1000); // duration of the fade-in animation
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div
-      className={`flex flex-col ${
-        isDarkMode ? 'bg-[#27262b] text-white' : 'bg-white text-black'
+      className={`flex flex-col transition-colors duration-300 ${
+        isDarkMode ? 'bg-[#27262b]' : 'bg-white'
       } ${isFadingIn ? 'animate-fade-in' : ''}`}
     >
       <SideBar

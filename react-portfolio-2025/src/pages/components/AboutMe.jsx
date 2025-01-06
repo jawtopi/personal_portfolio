@@ -4,7 +4,7 @@ import me from '../images/me.jpeg';
 const AboutMe = ({ isDarkMode }) => {
   return (
     <div className="p-8 pr-16">
-      <h1 className="text-4xl pb-8"> About Me </h1>
+      <h1 className={`text-4xl pb-8 ${isDarkMode ? 'text-white' : 'text-black'}`}> About Me </h1>
       <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
         <img src={me} alt="me" className="w-72 h-auto rounded-sm shadow-2xl" />
         <div className="sm:pl-8 pt-4 sm:pt-0">

@@ -112,7 +112,7 @@ const LandingPage = () => {
           : "bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px]"
       } ${animationTriggered ? "animate-zoom-fade-out" : ""}`}
     >
-      {/* Background Triangles */}
+      {/* background triangles */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
         {triangles.map((triangle) => (
           <div
@@ -134,7 +134,7 @@ const LandingPage = () => {
         ))}
       </div>
 
-      {/* Drawing Canvas */}
+      {/* drawing canvas */}
       <canvas
         ref={canvasRef}
         className="absolute top-0 left-0 z-10 pointer-events-auto"
@@ -145,7 +145,7 @@ const LandingPage = () => {
         onMouseUp={handleMouseUp}
       />
 
-      {/* Dark Mode Toggle */}
+      {/* toggle dark mode */}
       <div
         id="dark-mode-icon"
         className={`absolute top-4 right-4 p-2 rounded-full transition-colors duration-300 z-30 cursor-pointer ${
@@ -156,13 +156,12 @@ const LandingPage = () => {
         <img src={darkModeIcon} alt="dark mode toggle" className="w-8 h-8 hover:opacity-50 transition-opacity" />
       </div>
 
-      {/* Main Content */}
       <div className="flex flex-col items-center z-20 pointer-events-none">
         <p className="font-semibold animate-fade-in mb-8 text-5xl sm:text-6xl lg:text-7xl">hello. i'm jason</p>
         <button
           id="continue-button"
           onClick={handleContinueClick}
-          className="px-6 py-3 mt-4 rounded-lg shadow-lg transition-all text-base sm:text-lg lg:text-xl pointer-events-auto"
+          className="px-6 py-3 mt-4 rounded-lg shadow-lg transition-all animate-fade-in text-base sm:text-lg lg:text-xl pointer-events-auto"
           style={{
             backgroundColor: buttonColor,
             color: isDarkMode ? "black" : "white",

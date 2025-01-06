@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = ({ isDarkMode, refs }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -10,7 +11,7 @@ const Sidebar = ({ isDarkMode, refs }) => {
   const toggleProjects = () => setIsProjectsOpen((prev) => !prev);
 
   const handleScrollToSection = (ref) => {
-    setIsSidebarOpen(false); // Close the sidebar on smaller screens
+    setIsSidebarOpen(false); // close the sidebar on smaller screens
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -31,7 +32,7 @@ const Sidebar = ({ isDarkMode, refs }) => {
 
   return (
     <div className="relative">
-      {/* Hamburger button for small screens */}
+      {/* hamburger button for small screens */}
       <button
         onClick={toggleSidebar}
         className={`absolute top-4 left-4 z-50 block lg:hidden p-2 rounded-md focus:outline-none ${
@@ -50,14 +51,14 @@ const Sidebar = ({ isDarkMode, refs }) => {
         </svg>
       </button>
 
-      {/* Dropdown menu for small screens */}
+      {/* dropdown menu for small screens */}
       {isSidebarOpen && (
         <div
           className={`absolute top-16 left-4 bg-gray-50 w-56 border rounded-lg shadow-lg z-40 lg:hidden ${
-            isDarkMode ? 'bg-[#27262B] text-gray-300 border-gray-600' : 'bg-gray-50 text-black border-gray-200'
-          }`}
+            isDarkMode ? 'bg-[#27262b] text-gray-300 border-gray-600' : 'bg-gray-50 text-black border-gray-200'}`}
         >
-          <nav className="p-4">
+          <nav className={`p-4 ${
+            isDarkMode ? 'bg-[#27262b]': 'bg-white'}`}>
             <ul className="space-y-2">
               <li>
                 <button
@@ -154,23 +155,25 @@ const Sidebar = ({ isDarkMode, refs }) => {
         </div>
       )}
 
-      {/* Sidebar for larger screens */}
+      {/* sidebar for larger screens */}
       <div
         className={`hidden lg:block fixed inset-y-0 left-0 pl-16 h-screen border-r transition-colors duration-300 ${
           isDarkMode ? 'bg-[#27262B] text-gray-300 border-gray-600' : 'bg-gray-50 text-black border-gray-200'
         }`}
       >
         <div className="p-4 border-b">
-          <h1 className={`text-2xl font-medium pr-24 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+          <NavLink 
+            to='/'
+            className={`text-2xl font-medium pr-24 ${isDarkMode ? 'text-white' : 'text-black'}`}>
             Jason Lee
-          </h1>
+          </NavLink>
         </div>
         <nav className="mt-12">
           <ul className="space-y-2">
             <li>
               <button
                 onClick={() => handleScrollToSection(refs.aboutMeRef)}
-                className={`block px-4 py-2 text-sm ${
+                className={`block px-4 pr-[10.2rem] py-2 text-sm ${
                   isDarkMode ? 'hover:bg-gray-700 text-blue-300' : 'hover:bg-gray-200 text-blue-600'
                 } transition`}
               >
@@ -180,7 +183,7 @@ const Sidebar = ({ isDarkMode, refs }) => {
             <li>
               <button
                 onClick={() => handleScrollToSection(refs.educationRef)}
-                className={`block px-4 py-2 text-sm ${
+                className={`block px-4 pr-[10.2rem] py-2 text-sm ${
                   isDarkMode ? 'hover:bg-gray-700 text-blue-300' : 'hover:bg-gray-200 text-blue-600'
                 } transition`}
               >
@@ -272,7 +275,7 @@ const Sidebar = ({ isDarkMode, refs }) => {
             <li>
               <button
                 onClick={() => handleScrollToSection(refs.teachingRef)}
-                className={`block px-4 py-2 text-sm ${
+                className={`block px-4 pr-[10.2rem] py-2 text-sm ${
                   isDarkMode ? 'hover:bg-gray-700 text-blue-300' : 'hover:bg-gray-200 text-blue-600'
                 } transition`}
               >
