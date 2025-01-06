@@ -5,6 +5,7 @@ import kidrone from '../images/kidrone_logo.jpeg';
 import ss from '../images/SsLogo.png';
 import nike from '../images/nike.png';
 import berk from '../images/berk.png';
+import kumon from '../images/kumon.jpeg';
 
 const Experience = () => {
   const workExperiences = [
@@ -65,6 +66,17 @@ const Experience = () => {
         'Covered topics from Higher-Order Functions to Recursion, Mutability, SQL and Object-Oriented Programming.',
       ],
       logo: berk
+    },
+    {
+        title: 'Head Teaching Assistant',
+        company: 'KUMON Mt Albert.',
+        location: 'Mt Albert, Auckland, New Zealand',
+        date: 'Feb 2016 - Aug 2022',
+        responsibilities: [
+          'Managed day-to-day activities at tutoring center, trained new staff, taught primary to high school Math and English',
+          'Hosted fun flashcard and reading sessions for younger students (ages < 5)',
+        ],
+        logo: kumon
     },
   ];
 

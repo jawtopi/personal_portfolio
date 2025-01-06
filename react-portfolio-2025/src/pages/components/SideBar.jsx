@@ -111,7 +111,7 @@ const Sidebar = () => {
                         to="/project-1"
                         className="block text-gray-700 text-sm hover:text-blue-600 transition"
                       >
-                        Project 1
+                        SecureSync
                       </NavLink>
                     </li>
                     <li>
@@ -119,7 +119,7 @@ const Sidebar = () => {
                         to="/project-2"
                         className="block text-gray-700 text-sm hover:text-blue-600 transition"
                       >
-                        Project 2
+                        NEWGEN
                       </NavLink>
                     </li>
                     <li>
@@ -127,7 +127,15 @@ const Sidebar = () => {
                         to="/project-3"
                         className="block text-gray-700 text-sm hover:text-blue-600 transition"
                       >
-                        Project 3
+                        RISC-V CPU
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/project-3"
+                        className="block text-gray-700 text-sm hover:text-blue-600 transition"
+                      >
+                        2D World Exploration Game
                       </NavLink>
                     </li>
                   </ul>
@@ -213,7 +221,7 @@ const Sidebar = () => {
                       to="/project-1"
                       className="block text-gray-700 text-sm hover:text-blue-600 transition"
                     >
-                      Project 1
+                      SecureSync
                     </NavLink>
                   </li>
                   <li>
@@ -221,7 +229,7 @@ const Sidebar = () => {
                       to="/project-2"
                       className="block text-gray-700 text-sm hover:text-blue-600 transition"
                     >
-                      Project 2
+                      NEWGEN
                     </NavLink>
                   </li>
                   <li>
@@ -229,7 +237,15 @@ const Sidebar = () => {
                       to="/project-3"
                       className="block text-gray-700 text-sm hover:text-blue-600 transition"
                     >
-                      Project 3
+                      RISC-V CPU
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/project-3"
+                      className="block text-gray-700 text-sm hover:text-blue-600 transition"
+                    >
+                      2D World Exploration Game
                     </NavLink>
                   </li>
                 </ul>
