@@ -13,6 +13,7 @@ const Projects = ({ isDarkMode }) => {
         'Integrated cryptographic libraries (AES-CTR, HMAC, RSA Encryption, Digital Signatures, Slow/Fast Hashing) to ensure confidentiality, integrity and user authentication in the presence of adversaries on untrusted servers',
         'Architected design enabling real-time file update synchronization and bandwidth efficient file append mechanisms',
       ],
+      filePath: 'nike',
     },
     {
       title: 'Full Stack Project - NEWGEN Website',
@@ -24,6 +25,7 @@ const Projects = ({ isDarkMode }) => {
         'Implemented AWS user authentication using Django Backend, APIs, Django REST Framework, React and Axios',
         'Utilized MySQL databases to store student information, tutor blog posts, and relevant class information',
       ],
+      filePath: 'nike',
     },
     {
       title: 'Logism Single Core RISC-V CPU',
@@ -35,6 +37,7 @@ const Projects = ({ isDarkMode }) => {
         'Developed a pipelined architecture with hazard mitigation for branch and jump instructions, ensuring accurate instruction execution through control hazard resolution and no-op insertion.',
         'Integrated advanced testing workflows, debugging datapaths and circuits using custom RISC-V tests, Bash scripts, and Logisim tools to ensure optimal performance and compliance with design specifications.',
       ],
+      filePath: 'nike',
     },
     {
       title: '2D World Exploration Game',
@@ -46,6 +49,7 @@ const Projects = ({ isDarkMode }) => {
         'Utilized Binary Search Partitioning algorithm to create complex, pseudo-random seeded world with rooms and hallways',
         'Implemented methods for loading and saving game objects to/from JSON Files for users to save progress',
       ],
+      filePath: 'nike',
     },
   ];
 

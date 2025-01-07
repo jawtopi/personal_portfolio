@@ -16,7 +16,6 @@ const Education = ({ isDarkMode }) => {
     { id: "CS 70", semester: "Fall 2023", name: "Discrete Mathematics and Probability Theory", notes: "Mathematical logic, probabilistic reasoning." },
     { id: "MATH 53", semester: "Fall 2023", name: "Multivariable Calculus", notes: "Vector calculus, partial derivatives, multiple integrals" },
     { id: "CS 61A", semester: "Spring 2023", name: "The Structure and Interpretation of Computer Programs", notes: "Functional programming, abstraction techniques, Python." },
-    { id: "MATH 53", semester: "Spring 2023", name: "Multivariable Calculus", notes: "Partial derivatives, gradients, vector fields." },
     { id: "MATH H54", semester: "Fall 2022", name: "Honors Linear Algebra and Differential Equations", notes: "Advanced linear algebra, differential equations." },
   ];
 

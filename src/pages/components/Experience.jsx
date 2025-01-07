@@ -20,6 +20,7 @@ const Experience = ({ isDarkMode }) => {
         'Led software development efforts in Full-Stack student Learning Management System project.',
       ],
       logo: bestlogo,
+      filePath: 'nike',
     },
     {
       title: 'Contract Software Engineer - Front End',
@@ -30,6 +31,7 @@ const Experience = ({ isDarkMode }) => {
         'Built Next.js components, focusing on modular design for scalability for Nike’s Learning Platform.',
       ],
       logo: nike,
+      filePath: 'nike',
     },
     {
       title: 'Software Engineer Intern - Algorithms',
@@ -42,6 +44,7 @@ const Experience = ({ isDarkMode }) => {
         'Packaged code into full-stack application using Electron and built basic front-end using React.js for pre-deployment.',
       ],
       logo: kidrone,
+      filePath: 'nike',
     },
     {
       title: 'Software Engineer Intern - Game Development',
@@ -54,6 +57,7 @@ const Experience = ({ isDarkMode }) => {
         'Wrote unit tests and performed regression testing, resulting in a robust mobile application ready for release.',
       ],
       logo: ss,
+      filePath: 'nike',
     },
     {
       title: 'CS61a Academic Intern',
@@ -66,6 +70,7 @@ const Experience = ({ isDarkMode }) => {
         'Covered topics from Higher-Order Functions to Recursion, Mutability, SQL and Object-Oriented Programming.',
       ],
       logo: berk,
+      filePath: 'nike',
     },
     {
       title: 'Head Teaching Assistant',
@@ -77,6 +82,7 @@ const Experience = ({ isDarkMode }) => {
         'Hosted fun flashcard and reading sessions for younger students (ages < 5)',
       ],
       logo: kumon,
+      filePath: 'nike',
     },
   ];
 
